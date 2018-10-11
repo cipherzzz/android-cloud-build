@@ -7,3 +7,9 @@ steps:
   args: ['-g', '.gradle', 'assemble']
 - name: gcr.io/cloud-builders/gsutil
   args: ['cp', 'cache.zip', 'gs://gradle_cache_$PROJECT_ID/cache.zip']
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: [
+    'rsync',
+    'app/build/outputs/apk/debug/*.apk',
+    'gs://android-cloud-build-apk'
+  ]  
