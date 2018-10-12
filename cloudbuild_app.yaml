@@ -12,5 +12,5 @@ steps:
     'cp',
     '-r',
     'app/build/outputs/apk',
-    'gs://android-cloud-build-apk'
+    'gs://apk_$PROJECT_ID'
   ]  
